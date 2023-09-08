@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "c3a39a038c7256a3d259cabea37557ec7401852f6567e9cb46505748928a6cd1"
+build_start_time: [1691132950, 143645000]
+build_end_time: [1691132951, 225251000]
+inputs:
+  "/Users/nikitabudkovskiy/Downloads/isar_mobx_login_test/macos/Flutter/GeneratedPluginRegistrant.swift": [1691132946, 836279051]
+  "/Users/nikitabudkovskiy/Downloads/isar_mobx_login_test/macos/Runner/AppDelegate.swift": [1674545818, 0]
+  "/Users/nikitabudkovskiy/Downloads/isar_mobx_login_test/macos/Runner/MainFlutterWindow.swift": [1684923637, 0]
