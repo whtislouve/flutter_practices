@@ -14,39 +14,34 @@ class DioTest extends StatefulWidget {
 
 class _DioTest extends State<DioTest> {
   _DioTest({Key? key});
-  // List response = [];
-  // final DioClient _dioClient = DioClient();
   var store = DioStore();
-
-  @override
-  void initState() {
-    getPostFromStore();
-
-    super.initState();
-  }
-
-  Future getPostFromStore() async {
-    await store.getPosts();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Observer(
-        builder: (context) {
-          if (store.isPostListLoading) {
+      body: FutureBuilder(
+        future: store.getPosts(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: Text("Bad connection to the server"),
             );
           }
-          return ListView.builder(
-            itemCount: store.postList.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(store.postList[index].body),
+          return Observer(builder: (context) {
+            if (store.isPostListLoading) {
+              return const Center(
+                child: CircularProgressIndicator(),
               );
-            },
-          );
+            }
+            return ListView.builder(
+              itemCount: store.postList.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(store.postList[index].body),
+                );
+              },
+            );
+          });
         },
       ),
     );

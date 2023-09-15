@@ -15,11 +15,13 @@ class DioClient {
     ));
 
   Future getPosts() async {
-    Response response;
-
-    response = await dio.get(options.baseUrl + "posts");
-    final data = response.data.map((post) => Post.fromMap(post)).toList();
-
-    return data;
+    Response? response;
+    try {
+      response = await dio.get(options.baseUrl + "posts");
+      final data = response.data.map((post) => Post.fromMap(post)).toList();
+      return data;
+    } on DioException catch (e) {
+      throw {e};
+    }
   }
 }
