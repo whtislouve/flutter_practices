@@ -41,14 +41,6 @@ mixin _$DioStore on _DioStore, Store {
     });
   }
 
-  late final _$getPostsAsyncAction =
-      AsyncAction('_DioStore.getPosts', context: context);
-
-  @override
-  Future<dynamic> getPosts() {
-    return _$getPostsAsyncAction.run(() => super.getPosts());
-  }
-
   @override
   String toString() {
     return '''
