@@ -1,12 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:isar_mobx_login_test/dev/api/dio_test_request.dart';
 import 'package:isar_mobx_login_test/dev/repositories/post_repo.dart';
-import 'package:isar_mobx_login_test/dev/stores/dio_store.dart';
-import 'package:mobx/mobx.dart';
-
-import '../models/post.dart';
 
 class DioTest extends StatefulWidget {
   @override
